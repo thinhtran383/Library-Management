@@ -1,12 +1,31 @@
 package com.example;
 
 import java.io.IOException;
-import javafx.fxml.FXML;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class PrimaryController {
+import com.example.Service.LoginService;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+
+public class PrimaryController implements Initializable {
+    public LoginService loginService;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loginService = new LoginService();
+
+    }
+
+
+//    public PrimaryController(LoginService loginService){
+//        this.loginService = loginService;
+//    }
 
     @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
+        loginService.setRoot();
     }
+
+
 }
