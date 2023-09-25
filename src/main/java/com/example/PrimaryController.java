@@ -9,13 +9,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 public class PrimaryController implements Initializable {
-    public LoginService loginService;
+
+    private LoginService loginService;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loginService = new LoginService();
-
     }
-
 
 //    public PrimaryController(LoginService loginService){
 //        this.loginService = loginService;
@@ -26,6 +25,7 @@ public class PrimaryController implements Initializable {
         App.setRoot("secondary");
         loginService.setRoot();
     }
+
 
 
 }
